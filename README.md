@@ -5,8 +5,10 @@ Capture traffic from fortigate cli and convert to pcap file
 
 2. Install it in default folder ("C:\Program Files\PuTTY\putty.exe")
 
-3. Extract this zip under "userprofile" path ("C:\Users\{Your Username}\{Your Preferred Path}\")
+3. Download "fgt2eth" from https://kb.fortinet.com/kb/viewContent.do?externalId=11186
 
-4. Run fgdump.exe
+4. Put it under "userprofile" path ("C:\Users\{Your Username}\{Your Preferred Path}\")
 
-5. Enjoy!
+5. Run fgdump.ps1
+
+6. Enjoy!
