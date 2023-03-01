@@ -16,15 +16,16 @@ Write-Host $banner -ForegroundColor Red
 
 $putty_executable = "C:\Program Files\PuTTY\putty.exe"
 
-# Download From: http://kb.fortinet.com/kb/viewContent.do?externalId=11186
+# Download "fgt2eth.exe" From: http://kb.fortinet.com/kb/viewContent.do?externalId=11186
 $fgt2eth_executable = Get-ChildItem -Path $env:USERPROFILE -Recurse -Filter fgt2eth.exe 2> $null | Select-Object -ExpandProperty FullName
 
-
+# Host, User, Password 
 $FortigateHost = $( Write-Host "Fortigate IP: " -ForegroundColor Yellow -NoNewline; Read-Host )
 $FortigateUser = $( Write-Host "Username: " -ForegroundColor Yellow -NoNewline; Read-Host )
 $FortigatePassword = $( Write-Host "Password: " -ForegroundColor Yellow -NoNewline; Read-Host -AsSecureString )
 $plainPwd =[Runtime.InteropServices.Marshal]::PtrToStringAuto([Runtime.InteropServices.Marshal]::SecureStringToBSTR($FortigatePassword))
 
+# Select interface and filter to apply
 $CaptureInterface=$(  Write-Host "Interface: " -ForegroundColor Yellow -NoNewline; Read-Host )
 $CaptureFilter=$(  Write-Host "Filter (es: host x.x.x.x): " -ForegroundColor Yellow -NoNewline; Read-Host )
 
@@ -93,7 +94,7 @@ if( (Test-Path -Path $CaptureFile))
     if($REMOVE_PUTTY_LOG_AFTER_PROCESSING)
     {
         Remove-Item $CaptureFile -Confirm:$false
-		    Remove-Item "$CaptureDirectory\output.tmp" -Confirm:$false
+	Remove-Item "$CaptureDirectory\output.tmp" -Confirm:$false
     }
 
 }else{
