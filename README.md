@@ -12,3 +12,6 @@ Capture traffic from fortigate cli and convert to pcap file
 5. Run fgdump.ps1
 
 6. Enjoy!
+
+
+![fgdump](https://github.com/giuseppe-logiurato/FgDump/assets/55047302/79b72fe2-f2d2-4b6f-ab25-31868c123636)
